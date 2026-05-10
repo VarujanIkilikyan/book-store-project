@@ -1,6 +1,6 @@
 import  {Router} from "express";
 
-import views from "../controllers/views.js";
+import views from "../01_controllers/views.js";
 
 const SelectorRouter = Router();
 

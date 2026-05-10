@@ -9,7 +9,8 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-import SelectorRouter from './routers/index.js';
+import SelectorRouter from './00_routers/index.js';
+import errorHandler from "./02_middleware/errorHandler.js";
 
 const app = express();
 const server = createServer(app);
@@ -23,8 +24,13 @@ app.use(express.static(__dirname + '/public'));
 //transform post body req.body
 app.use(express.json());
 
-//request hendler
+//request handler
 app.use(SelectorRouter);
+
+//error handler
+app.use(errorHandler.notFound);
+app.use(errorHandler.errors);
+
 
 
 const { PORT = 3000, HOST = 'localhost' } = process.env;
