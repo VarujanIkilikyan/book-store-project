@@ -1,0 +1,14 @@
+{
+  "name": "book-store",
+  "version": "1.0.0",
+  "description": "trying to create a bookstore",
+  "main": "app.js",
+  "repository": "https://github.com/VarujanIkilikyan/book-store-project.git",
+  "author": "Varujan Ikilikyan",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "devnode": "node -r app.js"
+  }
+}
