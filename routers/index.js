@@ -4,6 +4,6 @@ import views from "../controllers/views.js";
 
 const SelectorRouter = Router();
 
-SelectorRouter.get('/',await views.viewRender('index'))
+SelectorRouter.get('/',views.viewRender('index'))
 
 export default SelectorRouter;
