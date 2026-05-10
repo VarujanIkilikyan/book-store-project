@@ -9,6 +9,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "devnode": "node -r app.js"
+    "devnode": "node -r dotenv/config app.js dotenv_config_path=./.env"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
   }
 }
