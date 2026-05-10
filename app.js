@@ -3,7 +3,13 @@ import {createServer} from 'http';
 import 'dotenv/config'
 import logger from 'morgan';
 
-import router from './routers/index.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+import SelectorRouter from './routers/index.js';
 
 const app = express();
 const server = createServer(app);
@@ -18,7 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
 //request hendler
-app.use(router);
+app.use(SelectorRouter);
 
 
 const { PORT = 3000, HOST = 'localhost' } = process.env;
